@@ -13,7 +13,6 @@ import lombok.extern.slf4j.Slf4j;
 import java.time.ZonedDateTime;
 import java.util.List;
 
-//@JsonTypeName(Episode.JSON_TYPE_NAME)
 @Setter
 @Getter
 @ToString(callSuper = true)
@@ -23,8 +22,6 @@ import java.util.List;
 @Slf4j
 public class Episode
         extends BaseType<Episode> {
-
-//    public static final String JSON_TYPE_NAME = "episode";
 
     private Integer id;
 
