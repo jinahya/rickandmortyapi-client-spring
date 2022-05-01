@@ -15,6 +15,7 @@ import org.hibernate.validator.constraints.URL;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import java.time.ZonedDateTime;
 import java.util.List;
 import java.util.Objects;
 
@@ -36,7 +37,7 @@ public class Character
         DEAD("Dead"),
 
         @JsonEnumDefaultValue
-        UNKNOWN("Unknown");
+        UNKNOWN("unknown");
 
         Status(final String jsonValue) {
             this.jsonValue = Objects.requireNonNull(jsonValue, "jsonValue is null");
@@ -55,7 +56,7 @@ public class Character
         GENDERLESS("Genderless"),
 
         @JsonEnumDefaultValue
-        UNKNOWN("Unknown");
+        UNKNOWN("unknown");
 
         Gender(final String jsonValue) {
             this.jsonValue = Objects.requireNonNull(jsonValue, "jsonValue is null");
@@ -89,5 +90,5 @@ public class Character
 
     private String url;
 
-    private String created;
+    private ZonedDateTime created;
 }

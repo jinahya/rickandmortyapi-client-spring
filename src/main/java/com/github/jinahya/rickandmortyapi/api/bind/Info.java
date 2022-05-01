@@ -8,9 +8,9 @@ import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 import lombok.extern.jackson.Jacksonized;
 import lombok.extern.slf4j.Slf4j;
+import org.hibernate.validator.constraints.URL;
 
-import java.time.ZonedDateTime;
-import java.util.List;
+import javax.validation.constraints.PositiveOrZero;
 
 @Setter
 @Getter
@@ -19,20 +19,18 @@ import java.util.List;
 @Jacksonized
 @SuperBuilder(toBuilder = true)
 @Slf4j
-public class Location
-        extends BaseType<Location> {
+public class Info
+        extends BaseType<Info> {
 
-    private Integer id;
+    @PositiveOrZero
+    private int count;
 
-    private String name;
+    @PositiveOrZero
+    private int pages;
 
-    private String type;
+    @URL
+    private String next;
 
-    private String dimension;
-
-    private List<String> residents;
-
-    private String url;
-
-    private ZonedDateTime created;
+    @URL
+    private String prev;
 }
