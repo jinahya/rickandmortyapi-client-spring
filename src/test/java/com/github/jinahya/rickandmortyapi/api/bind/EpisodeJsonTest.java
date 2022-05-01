@@ -23,6 +23,7 @@ class EpisodeJsonTest
             log.debug("info: {}", object.getInfo());
             object.getResults().forEach(r -> {
                 log.debug("episode: {}", r);
+                log.debug("airDate: '{}'\t{}", r.getAirDate(), r.getAirDateAsLocalDate());
             });
         }
     }
