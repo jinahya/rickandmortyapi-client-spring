@@ -11,7 +11,7 @@ import org.springframework.hateoas.RepresentationModel;
 @Setter
 @Getter
 @ToString(callSuper = true)
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@NoArgsConstructor(access = AccessLevel.PACKAGE)
 @Slf4j
 abstract class BaseTypeStub<T extends BaseTypeStub<T>>
         extends RepresentationModel<T> {
@@ -36,7 +36,7 @@ abstract class BaseTypeStub<T extends BaseTypeStub<T>>
         public abstract C build();
     }
 
-    protected BaseTypeStub(final BaseTypeStubBuilder<T, ?, ?> b) {
+    BaseTypeStub(final BaseTypeStubBuilder<T, ?, ?> b) {
         super();
     }
 }

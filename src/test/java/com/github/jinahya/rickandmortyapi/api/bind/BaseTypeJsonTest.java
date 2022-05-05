@@ -8,13 +8,17 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.json.JsonTest;
 import org.springframework.boot.test.json.JacksonTester;
 
+import java.util.Objects;
+
 @JsonTest
-abstract class BaseTypeJsonTest<T extends BaseType<T>>
-        extends BaseTypeTest<T> {
+abstract class BaseTypeJsonTest<T extends BaseType<T>> {
 
     protected BaseTypeJsonTest(final Class<T> typeClass) {
-        super(typeClass);
+        super();
+        this.typeClass = Objects.requireNonNull(typeClass, "typeClass is null");
     }
+
+    protected final Class<T> typeClass;
 
     @Autowired
     @Accessors(fluent = true)

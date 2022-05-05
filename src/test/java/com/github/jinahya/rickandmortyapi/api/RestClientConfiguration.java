@@ -9,12 +9,13 @@ import org.springframework.web.reactive.function.client.WebClient;
 @Slf4j
 class RestClientConfiguration {
 
-    public static final String BASE_URL = "https://rickandmortyapi.com/api";
-
+    @RestClientService.RickAndMortyApiRestWebClient
     @Bean
     WebClient webClient() {
-        return WebClient.builder()
-                .baseUrl(BASE_URL)
+        final WebClient webClient1 = WebClient.builder()
+                .baseUrl(RestClientService.BASE_URL)
                 .build();
+        log.debug("webClient1: {}", webClient1);
+        return webClient1;
     }
 }

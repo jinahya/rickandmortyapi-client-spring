@@ -3,6 +3,7 @@ package com.github.jinahya.rickandmortyapi.api.bind;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AccessLevel;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -20,6 +21,7 @@ import java.util.Optional;
 
 @Setter
 @Getter
+@EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Jacksonized
@@ -28,9 +30,11 @@ import java.util.Optional;
 public class Episode
         extends BaseType<Episode> {
 
+    private static final long serialVersionUID = 4681902269254116911L;
+
     private static final String AIR_DATE_PATTERN = "MMMM d, uuuu";
 
-    public static final DateTimeFormatter AIR_DATE_FORMATTER
+    private static final DateTimeFormatter AIR_DATE_FORMATTER
             = DateTimeFormatter.ofPattern(AIR_DATE_PATTERN).withLocale(Locale.US);
 
     @JsonIgnore

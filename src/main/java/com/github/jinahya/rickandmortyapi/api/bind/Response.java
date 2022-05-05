@@ -1,6 +1,7 @@
 package com.github.jinahya.rickandmortyapi.api.bind;
 
 import lombok.AccessLevel;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -13,6 +14,7 @@ import java.util.List;
 
 @Setter
 @Getter
+@EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Jacksonized
@@ -20,6 +22,8 @@ import java.util.List;
 @Slf4j
 public class Response<T extends BaseType<T>>
         extends BaseType<Response<T>> {
+
+    private static final long serialVersionUID = 2964939233217213948L;
 
     private Info info;
 

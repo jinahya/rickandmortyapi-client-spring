@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonEnumDefaultValue;
 import com.fasterxml.jackson.annotation.JsonValue;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import lombok.AccessLevel;
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -21,6 +22,7 @@ import java.util.Objects;
 
 @Setter
 @Getter
+@EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Jacksonized
@@ -29,6 +31,8 @@ import java.util.Objects;
 // https://rickandmortyapi.com/documentation/#character-schema
 public class Character
         extends BaseType<Character> {
+
+    private static final long serialVersionUID = 2502088194938684800L;
 
     public enum Status {
 

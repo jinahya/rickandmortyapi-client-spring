@@ -27,3 +27,6 @@ buildNumber.properties
 
 .idea
 !.idea/codeStyles
+
+
+*.iml
