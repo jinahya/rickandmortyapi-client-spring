@@ -1,4 +1,4 @@
-package com.github.jinahya.rickandmortyapi.api;
+package com.github.jinahya.rickandmortyapi.client;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
@@ -7,7 +7,7 @@ import org.springframework.web.reactive.function.client.WebClient;
 
 @Configuration
 @Slf4j
-class RestClientConfiguration {
+class RestClientServiceConfiguration {
 
     @RestClientService.RickAndMortyApiRestWebClient
     @Bean

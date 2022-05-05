@@ -1,4 +1,4 @@
-package com.github.jinahya.rickandmortyapi;
+package com.github.jinahya.rickandmortyapi.client;
 
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

@@ -1,4 +1,4 @@
-package com.github.jinahya.rickandmortyapi.api.bind;
+package com.github.jinahya.rickandmortyapi.client.bind;
 
 import com.fasterxml.jackson.annotation.JsonEnumDefaultValue;
 import com.fasterxml.jackson.annotation.JsonValue;

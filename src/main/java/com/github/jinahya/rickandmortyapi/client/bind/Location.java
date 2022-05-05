@@ -1,4 +1,4 @@
-package com.github.jinahya.rickandmortyapi.api.bind;
+package com.github.jinahya.rickandmortyapi.client.bind;
 
 import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;
@@ -10,6 +10,7 @@ import lombok.experimental.SuperBuilder;
 import lombok.extern.jackson.Jacksonized;
 import lombok.extern.slf4j.Slf4j;
 
+import java.time.ZonedDateTime;
 import java.util.List;
 
 @Setter
@@ -20,12 +21,22 @@ import java.util.List;
 @Jacksonized
 @SuperBuilder(toBuilder = true)
 @Slf4j
-public class Response<T extends BaseType<T>>
-        extends BaseType<Response<T>> {
+public class Location
+        extends BaseType<Location> {
 
-    private static final long serialVersionUID = 2964939233217213948L;
+    private static final long serialVersionUID = 1780598600419814611L;
 
-    private Info info;
+    private Integer id;
 
-    private List<T> results;
+    private String name;
+
+    private String type;
+
+    private String dimension;
+
+    private List<String> residents;
+
+    private String url;
+
+    private ZonedDateTime created;
 }

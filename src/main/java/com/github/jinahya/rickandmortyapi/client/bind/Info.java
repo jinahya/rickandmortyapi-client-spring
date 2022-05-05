@@ -1,4 +1,4 @@
-package com.github.jinahya.rickandmortyapi.api.bind;
+package com.github.jinahya.rickandmortyapi.client.bind;
 
 import lombok.AccessLevel;
 import lombok.EqualsAndHashCode;

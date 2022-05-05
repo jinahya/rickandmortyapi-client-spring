@@ -1,5 +1,7 @@
-package com.github.jinahya.rickandmortyapi.api.bind;
+package com.github.jinahya.rickandmortyapi.client.bind;
 
+import com.github.jinahya.rickandmortyapi.client.bind.BaseType;
+import com.github.jinahya.rickandmortyapi.client.bind.Response;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;

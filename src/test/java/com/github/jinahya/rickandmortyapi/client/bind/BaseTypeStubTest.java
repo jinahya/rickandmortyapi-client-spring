@@ -1,4 +1,6 @@
-package com.github.jinahya.rickandmortyapi.api.bind;
+package com.github.jinahya.rickandmortyapi.client.bind;
+
+import com.github.jinahya.rickandmortyapi.client.bind.BaseTypeStub;
 
 import java.util.Objects;
 

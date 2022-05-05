@@ -1,4 +1,4 @@
-package com.github.jinahya.rickandmortyapi.api.bind;
+package com.github.jinahya.rickandmortyapi.client.bind;
 
 abstract class BaseTypeTest<T extends BaseType<T>>
         extends BaseTypeStubTest<T> {
