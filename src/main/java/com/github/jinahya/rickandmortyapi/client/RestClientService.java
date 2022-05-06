@@ -22,6 +22,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Collectors;
@@ -121,7 +122,8 @@ public class RestClientService {
      * @see <a href="https://rickandmortyapi.com/documentation/#get-multiple-characters">Get multiple characters</a>
      */
     public Mono<List<Character>> readCharacters(final int id, final int... otherIds) {
-        final String ids = IntStream.concat(IntStream.of(id), Stream.ofNullable(otherIds).flatMapToInt(IntStream::of))
+        Objects.requireNonNull(otherIds, "otherIds is null");
+        final String ids = IntStream.concat(IntStream.of(id), IntStream.of(otherIds))
                 .distinct()
                 .mapToObj(String::valueOf)
                 .collect(Collectors.joining(","));
@@ -190,7 +192,8 @@ public class RestClientService {
      * @see <a href="https://rickandmortyapi.com/documentation/#get-multiple-episodes">Get multiple episodes</a>
      */
     public Mono<List<Episode>> readEpisodes(final int id, final int... otherIds) {
-        final String ids = IntStream.concat(IntStream.of(id), Stream.ofNullable(otherIds).flatMapToInt(IntStream::of))
+        Objects.requireNonNull(otherIds, "otherIds is null");
+        final String ids = IntStream.concat(IntStream.of(id), IntStream.of(otherIds))
                 .distinct()
                 .mapToObj(String::valueOf)
                 .collect(Collectors.joining(","));
@@ -259,7 +262,8 @@ public class RestClientService {
      * @see <a href="https://rickandmortyapi.com/documentation/#get-multiple-locations">Get multiple locations</a>
      */
     public Mono<List<Location>> readLocations(final int id, final int... otherIds) {
-        final String ids = IntStream.concat(IntStream.of(id), Stream.ofNullable(otherIds).flatMapToInt(IntStream::of))
+        Objects.requireNonNull(otherIds, "otherIds is null");
+        final String ids = IntStream.concat(IntStream.of(id), IntStream.of(otherIds))
                 .distinct()
                 .mapToObj(String::valueOf)
                 .collect(Collectors.joining(","));
